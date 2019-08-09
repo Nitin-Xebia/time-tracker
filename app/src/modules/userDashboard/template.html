@@ -1,0 +1,54 @@
+<form name="addTaskForm">
+    <div class="widget-input">
+        <label>Date</label>
+        <div class="input-container">
+            <input type="date" name="taskdate" min="{{ctrl.minDate() | date: 'yyyy-MM-dd'}}" max="{{ctrl.maxDate() | date: 'yyyy-MM-dd'}}" ng-model="ctrl.date" ng-required="true" />
+            <div class="text-danger" ng-if="addTaskForm.submitted && addTaskForm.taskdate.$error.required">Please select Date.</div>
+        </div>
+    </div>
+    <div class="widget-input">
+        <label>Activity</label>
+        <div class="input-container">
+            <select name="activitySelect" ng-model="ctrl.task" ng-options="task as task.name for task in ctrl.tasks track by task.id" ng-disabled="ctrl.outofoffice" ng-change="ctrl.onActivityChange()" ng-required="!ctrl.outofoffice">
+            </select>
+            <div class="text-danger" ng-if="addTaskForm.submitted && addTaskForm.activitySelect.$error.required">Please select Activity.</div>
+        </div>
+    </div>
+    <div class="widget-input">
+        <label>Sub-Activity</label>
+        <div class="input-container">
+            <select name="subActivitySelect" ng-model="ctrl.subActivity" ng-options="subActivity as subActivity for subActivity in ctrl.task.subActivities" ng-required="!ctrl.outofoffice" ng-disabled="ctrl.outofoffice">
+            </select>
+            <div class="text-danger" ng-if="addTaskForm.submitted && addTaskForm.subActivitySelect.$error.required">Please select Sub-Activity.</div>            
+        </div>
+    </div>
+    <div class="widget-input">
+        <label>Time (in Mins)</label>
+        <div class="input-container">
+            <select name="taskTime" ng-model="ctrl.timeSpan" ng-options="timeSpan as (timeSpan + ' Mins') for timeSpan in [] | range" required="true" ng-disabled="ctrl.outofoffice"></select>
+            <div class="text-danger" ng-if="addTaskForm.submitted && addTaskForm.taskTime.$error.required">Please select time.</div>
+        </div>
+    </div>
+    <div class="widget-input">
+        <label>Comments</label>
+        <div class="input-container">
+            <textarea name="comment" cols="100" rows="5" maxlength="200" ng-model="ctrl.comment" ng-disabled="ctrl.outofoffice" ng-required="true"></textarea>
+            <div class="text-danger" ng-if="addTaskForm.submitted && addTaskForm.comment.$error.required">Please enter a comment.</div>            
+        </div>
+    </div>
+    <div class="widget-input">
+        <label>Out of Office</label>
+        <div class="ooo-container">
+            <input type="checkbox" name="outofoffice"  class="ooo-checkbox" ng-model="ctrl.outofoffice" ng-change="ctrl.onOOOstatusChange()">        
+        </div>
+    </div>
+    <div class="widget-input submit">
+        <div class="btn btn-primary" ng-click="ctrl.onSubmit(addTaskForm)">Submit</div>
+    </div>
+
+    <div ng-show="ctrl.showToast" class="toast">
+        <div class="toast-body">
+            <div>Task Saved</div>
+        </div>
+    </div>
+</form>

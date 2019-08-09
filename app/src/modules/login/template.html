@@ -1,0 +1,23 @@
+<div class="col-md-4">
+    <div class="widget">
+        
+        <div class="widget-body">
+            <form name="loginForm">
+                    <div class="widget-input">
+                        <label>User Name</label>
+                        <input type="text" name="username" required="true" ng-model="ctrl.username" placeholder="User Name" ng-pattern="/^[a-zA-Z]*$/" >
+                        <div class="text-danger" ng-if="loginForm.submitted && loginForm.username.$error.required">Please type User Name.</div>
+                    </div>
+                    <div class="widget-input">
+                        <label>Password</label>
+                        <input type="password" name="password" required="true" ng-model="ctrl.password" placeholder="Password">
+                        <div class="text-danger" ng-if="loginForm.submitted && loginForm.password.$error.required">Please type Password.</div>
+                    </div>
+
+                    <div class="widget-input submit">
+                        <div ng-if="!ctrl.isPreview" class="btn btn-primary" ng-click="ctrl.onSubmit(loginForm)">Login</div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>

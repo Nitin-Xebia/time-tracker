@@ -1,0 +1,130 @@
+/**
+ * Author
+ * Nitin Shinde (XEBIA IT ARCHITECTS IND. PVT. LTD.)
+ * Created on 08/08/2019
+ * Last Updated on 08/08/2019
+ */
+
+
+body {
+    /* background: url("/src/assets/background.jpg");
+    background-size: cover; */
+    font-family: 'Kanit', sans-serif;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.main-header img {
+    height: 40px;
+}
+
+.main-header {
+    background-color: #FFF;
+    padding: 15px;
+    border-bottom: 3px solid #EE7033;
+}
+
+.main-container {
+    padding-top: 60px;
+}
+
+.btn-primary {
+    min-width: 150px;
+    background-color: #EE7033;
+    border-color: #EE7033;
+}
+
+.btn-primary:hover {
+    background-color: #d45211;
+    border-color: #bd490f;
+}
+
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:active:hover {
+    background-color: #a5400d;
+    border-color: #a5400d;
+}
+
+/*Widget Related CSS*/
+.widget {
+    background-color: #FFF;
+}
+
+.widget .widget-header {
+    background-color: #0C8397;
+    color: #FFF;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.widget .widget-header .widget-icon {
+    height: 25px;
+    width: 30px;
+    float: left;
+}
+
+.widget.widget-lg .widget-header {
+    padding: 20px;
+}
+
+.widget .widget-body {
+    padding: 20px;
+}
+
+.widget-input {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.widget-input label {
+    display: inline-block;
+    min-width: 130px;
+    text-align: right;
+    padding-right: 30px; 
+}
+
+.widget-input select,
+.widget-input input,
+.widget-input textarea {
+    border: 0;
+    border-bottom: 2px solid #979797;
+    color: #979797;
+    width: 200px;
+}
+.ooo-container{ 
+    width: 200px;
+    text-align: left;
+    display: inline-block;
+}
+.widget-input textarea {
+    border: 2px solid; 
+}
+.widget-input .input-with-icon input {
+    padding-left: 20px;
+}
+
+.widget-input .ooo-checkbox {
+    width: auto;
+}
+
+.input-container {
+    display: inline-block;
+}
+
+.toast {
+    width: 200px;
+    padding: 15px;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    color: #2e5014;
+    background: #d5efc2;
+}
+/* Widget Related CSS ENDS */
